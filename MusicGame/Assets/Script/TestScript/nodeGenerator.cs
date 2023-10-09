@@ -36,16 +36,19 @@ public class nodeGenerator : MonoBehaviour
 
     private void GenNote()
     {
-        GenNoteList(sheet.noteList, notePrefab);        
+        GenNoteList(sheet.noteLine1, notePrefab, new Vector3(-1.5f, 0f, 0f));        
+        GenNoteList(sheet.noteLine2, notePrefab, new Vector3(-.5f, 0f, 0f));        
+        GenNoteList(sheet.noteLine3, notePrefab, new Vector3(.5f, 0f, 0f));        
+        GenNoteList(sheet.noteLine4, notePrefab, new Vector3(1.5f, 0f, 0f));        
     }
 
-    private void GenNoteList(List<float> noteList, GameObject notePrefab)
+    private void GenNoteList(List<float> noteList, GameObject notePrefab, Vector3 offset)
     {
         float posY;
         foreach (float noteTime in noteList)
         {
             posY = noteStartPosY + notePosY * (noteTime * noteCorrectRate);
-            Instantiate(notePrefab, new Vector3(0f, posY, 0f), Quaternion.identity);
+            Instantiate(notePrefab, new Vector3(offset.x, posY, 0f), Quaternion.identity);
         }
     }
 }

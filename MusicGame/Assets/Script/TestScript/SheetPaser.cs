@@ -25,7 +25,7 @@ public class SheetPaser : MonoBehaviour
 
     private void ParserSheet()
     {
-        int laneNumber;
+        int lineNumber;
         float noteTime;
 
         sheetText = strReader.ReadLine();
@@ -39,14 +39,16 @@ public class SheetPaser : MonoBehaviour
                 {
                     textSplit = sheetText.Split(',');
 
-                    int.TryParse(textSplit[0], out laneNumber);
+                    int.TryParse(textSplit[0], out lineNumber);
                     float.TryParse(textSplit[2], out noteTime);
 
-                    if (laneNumber == 192)
-                    {
-                        sheet.SetNote(noteTime);
-                    }
+                    if(lineNumber == 64) lineNumber = 1;
+                    else if (lineNumber == 192) lineNumber = 2;
+                    else if (lineNumber == 320) lineNumber = 3;
+                    else if (lineNumber == 448) lineNumber = 4;
 
+                    sheet.SetNote(lineNumber, noteTime);
+                    
                     sheetText = strReader.ReadLine();
                 }
             }

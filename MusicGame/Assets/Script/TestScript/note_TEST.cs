@@ -20,9 +20,9 @@ public class note_TEST : MonoBehaviour
         transform.Translate(Vector3.down * (speed * Time.smoothDeltaTime));
     }
 
-    private void OnBecameInvisible()
+    public void OnBecameInvisible()
     {
-        if (gameObject.transform.position.y <= -5f)
+        if (gameObject.transform.position.y <= -3.7f)
         {
             Destroy(gameObject);
         }
