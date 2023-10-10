@@ -17,18 +17,20 @@ public class Sheet : MonoBehaviour
 
     public void SetNote(float lineNumber, float noteTime)
     {
-        if (lineNumber.Equals(1))
+        switch (lineNumber)
         {
-            noteLine1.Add(noteTime);
-        }else if (lineNumber.Equals(2))
-        {
-            noteLine2.Add(noteTime);
-        }else if (lineNumber.Equals(3))
-        {
-            noteLine3.Add(noteTime);
-        }else if (lineNumber.Equals(4))
-        {
-            noteLine4.Add(noteTime);
+            case 1:
+                noteLine1.Add(noteTime);
+                break;
+            case 2:
+                noteLine2.Add(noteTime);
+                break;
+            case 3:
+                noteLine3.Add(noteTime);
+                break;
+            case 4:
+                noteLine4.Add(noteTime);
+                break;
         }
     }
 }

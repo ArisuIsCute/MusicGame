@@ -11,6 +11,9 @@ public class SheetPaser : MonoBehaviour
     
     private Sheet sheet;
 
+    private int lineNumber;
+    private float noteTime;
+    
     private string sheetText = "";
     private string[] textSplit;
 
@@ -25,9 +28,6 @@ public class SheetPaser : MonoBehaviour
 
     private void ParserSheet()
     {
-        int lineNumber;
-        float noteTime;
-
         sheetText = strReader.ReadLine();
 
         while (sheetText != null)
@@ -42,11 +42,14 @@ public class SheetPaser : MonoBehaviour
                     int.TryParse(textSplit[0], out lineNumber);
                     float.TryParse(textSplit[2], out noteTime);
 
-                    if(lineNumber == 64) lineNumber = 1;
-                    else if (lineNumber == 192) lineNumber = 2;
-                    else if (lineNumber == 320) lineNumber = 3;
-                    else if (lineNumber == 448) lineNumber = 4;
-
+                    lineNumber = lineNumber switch
+                    {
+                        64 => 1,
+                        192 => 2,
+                        320 => 3,
+                        448 => 4,
+                        _ => lineNumber
+                    };
                     sheet.SetNote(lineNumber, noteTime);
                     
                     sheetText = strReader.ReadLine();
