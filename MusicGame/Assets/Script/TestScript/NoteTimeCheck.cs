@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class NoteTimeCheck : MonoBehaviour
 {
-    private float currentTime;
-    private float currentNoteTime1;
-    private float currentNoteTime2;
-    private float currentNoteTime3;
-    private float currentNoteTime4;
+    public float currentTime;
+    public float currentNoteTime1;
+    public float currentNoteTime2;
+    public float currentNoteTime3;
+    public float currentNoteTime4;
 
     private float greatRate = 3025f;
     private float goodRate = 7050f;
@@ -17,10 +17,10 @@ public class NoteTimeCheck : MonoBehaviour
 
     private int lineNum;
     
-    private Queue<float> noteTimeLine1 = new Queue<float>();
-    private Queue<float> noteTimeLine2 = new Queue<float>();
-    private Queue<float> noteTimeLine3 = new Queue<float>();
-    private Queue<float> noteTimeLine4 = new Queue<float>();
+    public Queue<float> noteTimeLine1 = new Queue<float>();
+    public Queue<float> noteTimeLine2 = new Queue<float>();
+    public Queue<float> noteTimeLine3 = new Queue<float>();
+    public Queue<float> noteTimeLine4 = new Queue<float>();
 
     private Sheet sheet;
     private MusicManager musicManager;
