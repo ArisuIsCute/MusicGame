@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Input : MonoBehaviour
+public class NoteTimeCheck : MonoBehaviour
 {
     private float currentTime;
     private float currentNoteTime1;
@@ -24,10 +24,13 @@ public class Input : MonoBehaviour
 
     private Sheet sheet;
     private MusicManager musicManager;
+    private Score score;
     private void Start()
     {
         sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
         musicManager = GameObject.Find("SelectMusic").GetComponent<MusicManager>();
+        score = GameObject.Find("Score").GetComponent<Score>();
+        
         SetQueue();
     }
 
@@ -67,13 +70,67 @@ public class Input : MonoBehaviour
         {
             if (Mathf.Abs(currentNoteTime1 - currentTime) <= greatRate)
             {
+                score.ProcessScore(2);
                 noteTimeLine1.Dequeue();
             }else if (Mathf.Abs(currentNoteTime1 - currentTime) <= goodRate)
             {
+                score.ProcessScore(1);
                 noteTimeLine1.Dequeue();
             }else if (currentNoteTime1 + missRate <= currentTime)
             {
+                score.ProcessScore(0);
                 noteTimeLine1.Dequeue();
+            }
+        }
+
+        if (lineNum.Equals(2))
+        {
+            if (Mathf.Abs(currentNoteTime2 - currentTime) <= greatRate)
+            {
+                score.ProcessScore(2);
+                noteTimeLine2.Dequeue();
+            }else if (Mathf.Abs(currentNoteTime2 - currentTime) <= goodRate)
+            {
+                score.ProcessScore(1);
+                noteTimeLine2.Dequeue();
+            }else if (currentNoteTime2 + missRate <= currentTime)
+            {
+                score.ProcessScore(0);
+                noteTimeLine2.Dequeue();
+            }
+        }
+
+        if (lineNum.Equals(3))
+        {
+            if (Mathf.Abs(currentNoteTime3 - currentTime) <= greatRate)
+            {
+                score.ProcessScore(2);
+                noteTimeLine3.Dequeue();
+            }else if (Mathf.Abs(currentNoteTime3 - currentTime) <= goodRate)
+            {
+                score.ProcessScore(1);
+                noteTimeLine3.Dequeue();
+            }else if (currentNoteTime3 + missRate <= currentTime)
+            {
+                score.ProcessScore(0);
+                noteTimeLine3.Dequeue();
+            }
+        }
+
+        if (lineNum.Equals(4))
+        {
+            if (Mathf.Abs(currentNoteTime4 - currentTime) <= greatRate)
+            {
+                score.ProcessScore(2);
+                noteTimeLine4.Dequeue();
+            }else if (Mathf.Abs(currentNoteTime4 - currentTime) <= goodRate)
+            {
+                score.ProcessScore(1);
+                noteTimeLine4.Dequeue();
+            }else if (currentNoteTime4 + missRate <= currentTime)
+            {
+                score.ProcessScore(0);
+                noteTimeLine4.Dequeue();
             }
         }
     }
