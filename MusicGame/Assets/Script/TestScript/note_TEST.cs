@@ -17,12 +17,12 @@ public class note_TEST : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(Vector3.right * (speed * Time.smoothDeltaTime));
+        transform.Translate(Vector3.down * (speed * Time.smoothDeltaTime));
     }
 
     public void OnBecameInvisible()
     {
-        if (gameObject.transform.position.x >= -7.3f)
+        if (gameObject.transform.position.y >= -5f)
         {
             Destroy(gameObject);
         }

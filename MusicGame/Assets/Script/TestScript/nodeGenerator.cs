@@ -13,17 +13,17 @@ public class nodeGenerator : MonoBehaviour
     
     private float noteCorrectRate = 0.001f;
 
-    private float posX;
-    private float notePosX;
-    private float noteStartPosX;
+    private float posY;
+    private float notePosY;
+    private float noteStartPosY;
 
     public bool isGenFin;
     private void Start()
     {
         sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
         scrollSpeed = 17f;
-        notePosX = scrollSpeed;
-        noteStartPosX = scrollSpeed * 3.0f;
+        notePosY = scrollSpeed;
+        noteStartPosY = scrollSpeed * 3.0f;
     }
 
     private void Update()
@@ -35,18 +35,18 @@ public class nodeGenerator : MonoBehaviour
 
     private void GenNote()
     {
-        GenNoteList(sheet.noteLine1, notePrefab, new Vector3(0f, 1.5f, 0f));        
-        GenNoteList(sheet.noteLine2, notePrefab, new Vector3(0f, .5f, 0f));        
-        GenNoteList(sheet.noteLine3, notePrefab, new Vector3(0f, -.5f, 0f));        
-        GenNoteList(sheet.noteLine4, notePrefab, new Vector3(0f, -1.5f, 0f));        
+        GenNoteList(sheet.noteLine1, notePrefab, new Vector3(-1.5f, 0f, 0f));        
+        GenNoteList(sheet.noteLine2, notePrefab, new Vector3(-.5f, 0f, 0f));        
+        GenNoteList(sheet.noteLine3, notePrefab, new Vector3(.5f, 0f, 0f));        
+        GenNoteList(sheet.noteLine4, notePrefab, new Vector3(1.5f, 0f, 0f));        
     }
 
     private void GenNoteList(List<float> noteList, GameObject notePrefab, Vector3 offset)
     {
         foreach (var noteTime in noteList)
         {
-            posX = noteStartPosX + notePosX * (noteTime * noteCorrectRate);
-            Instantiate(notePrefab, new Vector3(-posX, offset.y, 0f), Quaternion.identity);
+            posY = noteStartPosY + notePosY * (noteTime * noteCorrectRate);
+            Instantiate(notePrefab, new Vector3(offset.x, posY, 0f), Quaternion.identity);
         }
     }
 }
