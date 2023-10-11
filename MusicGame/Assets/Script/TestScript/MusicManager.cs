@@ -26,7 +26,7 @@ public class MusicManager : MonoBehaviour
         previewTime = 30;
     }
 
-    public void PlayAudioForPlayScene()
+    public void PlayAudioForPlayScene() 
     {
         music.timeSamples = 0;
         music.PlayDelayed(3.0f);

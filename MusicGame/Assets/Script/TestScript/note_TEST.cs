@@ -22,7 +22,7 @@ public class note_TEST : MonoBehaviour
 
     public void OnBecameInvisible()
     {
-        if (gameObject.transform.position.y >= -5f)
+        if (gameObject.transform.position.y <= -1f)
         {
             Destroy(gameObject);
         }
