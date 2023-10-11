@@ -28,7 +28,7 @@ public class NoteTimeCheck : MonoBehaviour
     private void Start()
     {
         sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
-        musicManager = GameObject.Find("SelectMusic").GetComponent<MusicManager>();
+        musicManager = GameObject.Find("MusicManager").GetComponent<MusicManager>();
         score = GameObject.Find("Score").GetComponent<Score>();
         
         SetQueue();
