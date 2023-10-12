@@ -23,7 +23,7 @@ public class nodeGenerator : MonoBehaviour
         sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
         scrollSpeed = 17f;
         notePosY = scrollSpeed;
-        noteStartPosY = scrollSpeed * 3.0f;
+        noteStartPosY = scrollSpeed * 2.0f;
     }
 
     private void Update()
@@ -45,8 +45,8 @@ public class nodeGenerator : MonoBehaviour
     {
         foreach (var noteTime in noteList)
         {
-            posY = noteStartPosY + notePosY * (noteTime * noteCorrectRate);
-            Instantiate(notePrefab, new Vector3(offset.x, posY, 0f), Quaternion.identity);
+            posY = noteStartPosY + notePosY * (noteTime * noteCorrectRate) + offset.y;
+            Instantiate(notePrefab, new Vector3(offset.x, posY, offset.z), Quaternion.identity);
         }
     }
 }
