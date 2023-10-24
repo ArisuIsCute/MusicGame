@@ -37,7 +37,7 @@ public class MusicManager : MonoBehaviour
         isGameEnd = music.isPlaying;
 
         if (!isGameEnd)
-            SceneManager.LoadScene("InGameTest");
+            SceneManager.LoadScene("MainMenuTest");
     }
 
     public void SelectMusic(string musicName)
