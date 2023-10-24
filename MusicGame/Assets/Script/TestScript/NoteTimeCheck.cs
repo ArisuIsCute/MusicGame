@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class NoteTimeCheck : MonoBehaviour
 {
-    public float currentTime;
-    public float currentNoteTime1;
-    public float currentNoteTime2;
-    public float currentNoteTime3;
-    public float currentNoteTime4;
+    private float currentTime;
+    private float currentNoteTime1;
+    private float currentNoteTime2;
+    private float currentNoteTime3;
+    private float currentNoteTime4;
 
     private float greatRate = 3025f;
     private float goodRate = 7050f;
@@ -17,10 +17,10 @@ public class NoteTimeCheck : MonoBehaviour
 
     private int lineNum;
     
-    public Queue<float> noteTimeLine1 = new Queue<float>();
-    public Queue<float> noteTimeLine2 = new Queue<float>();
-    public Queue<float> noteTimeLine3 = new Queue<float>();
-    public Queue<float> noteTimeLine4 = new Queue<float>();
+    private Queue<float> noteTimeLine1 = new Queue<float>();
+    private Queue<float> noteTimeLine2 = new Queue<float>();
+    private Queue<float> noteTimeLine3 = new Queue<float>();
+    private Queue<float> noteTimeLine4 = new Queue<float>();
 
     private Sheet sheet;
     private MusicManager musicManager;
@@ -41,48 +41,48 @@ public class NoteTimeCheck : MonoBehaviour
         {
             currentNoteTime1 = noteTimeLine1.Peek();
             currentNoteTime1 = currentNoteTime1 * 0.001f * musicManager.music.clip.frequency;
+            
+            if (currentNoteTime1 + missRate <= currentTime)
+            {
+                score.ProcessScore(0);
+                noteTimeLine1.Dequeue();
+            }
         }
         
         if (noteTimeLine2.Count > 0)
         {
             currentNoteTime2 = noteTimeLine2.Peek();
             currentNoteTime2 = currentNoteTime2 * 0.001f * musicManager.music.clip.frequency;
+            
+            if (currentNoteTime2 + missRate <= currentTime)
+            {
+                score.ProcessScore(0);
+                noteTimeLine2.Dequeue();
+            }
         }
         
         if (noteTimeLine3.Count > 0)
         {
             currentNoteTime3 = noteTimeLine3.Peek();
             currentNoteTime3 = currentNoteTime3 * 0.001f * musicManager.music.clip.frequency;
+            
+            if (currentNoteTime3 + missRate <= currentTime)
+            {
+                score.ProcessScore(0);
+                noteTimeLine3.Dequeue();
+            }
         }
         
         if (noteTimeLine4.Count > 0)
         {
             currentNoteTime4 = noteTimeLine4.Peek();
             currentNoteTime4 = currentNoteTime4 * 0.001f * musicManager.music.clip.frequency;
-        }
-
-        if (currentNoteTime1 + missRate <= currentTime)
-        {
-            score.ProcessScore(0);
-            noteTimeLine1.Dequeue();
-        }
-        
-        if (currentNoteTime2 + missRate <= currentTime)
-        {
-            score.ProcessScore(0);
-            noteTimeLine2.Dequeue();
-        }
-        
-        if (currentNoteTime3 + missRate <= currentTime)
-        {
-            score.ProcessScore(0);
-            noteTimeLine3.Dequeue();
-        }
-        
-        if (currentNoteTime4 + missRate <= currentTime)
-        {
-            score.ProcessScore(0);
-            noteTimeLine4.Dequeue();
+            
+            if (currentNoteTime4 + missRate <= currentTime)
+            {
+                score.ProcessScore(0);
+                noteTimeLine4.Dequeue();
+            }
         }
     }
 

@@ -31,6 +31,8 @@ public class Score : MonoBehaviour
         MissCnt = 0;
         GoodCnt = 0;
         GreatCnt = 0;
+        
+        SetScoreText();
     }
 
     public void ProcessScore(int rank)
@@ -38,6 +40,7 @@ public class Score : MonoBehaviour
         if (rank.Equals(0))
         {
             Combo = 0;
+            MusicScore -= 30;
             MissCnt++;
         }
         else if (rank.Equals(1))
