@@ -23,7 +23,7 @@ public class nodeGenerator : MonoBehaviour
         sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
         scrollSpeed = 17f;
         notePosY = scrollSpeed;
-        noteStartPosY = scrollSpeed * 2.0f;
+        noteStartPosY = scrollSpeed * 2f;
     }
 
     private void Update()

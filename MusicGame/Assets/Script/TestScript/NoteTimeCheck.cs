@@ -60,6 +60,30 @@ public class NoteTimeCheck : MonoBehaviour
             currentNoteTime4 = noteTimeLine4.Peek();
             currentNoteTime4 = currentNoteTime4 * 0.001f * musicManager.music.clip.frequency;
         }
+
+        if (currentNoteTime1 + missRate <= currentTime)
+        {
+            score.ProcessScore(0);
+            noteTimeLine1.Dequeue();
+        }
+        
+        if (currentNoteTime2 + missRate <= currentTime)
+        {
+            score.ProcessScore(0);
+            noteTimeLine2.Dequeue();
+        }
+        
+        if (currentNoteTime3 + missRate <= currentTime)
+        {
+            score.ProcessScore(0);
+            noteTimeLine3.Dequeue();
+        }
+        
+        if (currentNoteTime4 + missRate <= currentTime)
+        {
+            score.ProcessScore(0);
+            noteTimeLine4.Dequeue();
+        }
     }
 
     public void TapNote(int lineNum)
