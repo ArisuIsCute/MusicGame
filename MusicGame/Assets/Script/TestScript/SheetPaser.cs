@@ -13,7 +13,7 @@ public class SheetPaser : MonoBehaviour
 
     private int lineNumber;
     private float noteTime;
-    
+
     private string sheetText = "";
     private string[] textSplit;
 

@@ -37,12 +37,13 @@ public class NoteTimeCheck : MonoBehaviour
     private void Update()
     {
         currentTime = musicManager.music.timeSamples;
+        
         if (noteTimeLine1.Count > 0)
         {
             currentNoteTime1 = noteTimeLine1.Peek();
             currentNoteTime1 = currentNoteTime1 * 0.001f * musicManager.music.clip.frequency;
             
-            if (currentNoteTime1 + missRate <= currentTime)
+            if (currentNoteTime1 + missRate < currentTime)
             {
                 score.ProcessScore(0);
                 noteTimeLine1.Dequeue();
