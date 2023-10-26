@@ -26,6 +26,8 @@ public class SheetPaser : MonoBehaviour
     private void Start()
     {
         sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
+        
+        PaserSheet();
     }
 
     private void PaserSheet()
