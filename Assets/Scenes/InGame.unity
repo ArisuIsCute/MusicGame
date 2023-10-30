@@ -877,6 +877,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5b8c4cd47b16474b895194f88803eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  comboText: {fileID: 2022021163}
+  scoreText: {fileID: 632521177}
+  rankText: {fileID: 2003956521}
 --- !u!4 &1406317219
 Transform:
   m_ObjectHideFlags: 0
