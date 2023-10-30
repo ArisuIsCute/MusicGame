@@ -16,6 +16,8 @@ public class SheetPaser : MonoBehaviour
     private int lineNumber;
     private float noteTime;
 
+    public float rateTime;
+
     private Sheet sheet;
 
     private void Awake()
@@ -36,6 +38,16 @@ public class SheetPaser : MonoBehaviour
 
         while (sheetText != null)
         {
+            if (sheetText == "[TimingPoints]")
+            {
+                sheetText = strReader.ReadLine();
+                if (sheetText != null)
+                {
+                    textSplit = sheetText.Split(',');
+                    float.TryParse(textSplit[0], out rateTime);
+                }
+            }
+            
             if (sheetText == "[HitObjects]")
             {
                 sheetText = strReader.ReadLine();

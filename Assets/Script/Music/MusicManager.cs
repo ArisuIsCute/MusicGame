@@ -11,6 +11,8 @@ public class MusicManager : MonoBehaviour
 
     public bool isGameEnd;
 
+    private SheetPaser sheetPaser;
+    
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -18,13 +20,14 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
+        sheetPaser = GameObject.Find("SheetPaser").GetComponent<SheetPaser>();
         music = GetComponent<AudioSource>();
     }
 
     public void StartMusicForPlay()
     {
         music.timeSamples = 0;
-        music.PlayDelayed(3.0f);
+        music.PlayDelayed(3.0f + (sheetPaser.rateTime * 0.001f));
     }
 
     public void FinshMusic()
