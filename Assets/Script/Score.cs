@@ -32,6 +32,8 @@ public class Score : MonoBehaviour
         MissCnt = 0;
         GoodCnt = 0;
         GreatCnt = 0;
+        
+        SetTexts();
     }
 
     public void SetScore(int rank)

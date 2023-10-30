@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GetInput : MonoBehaviour
+public class GetKey : MonoBehaviour
 {
     private NoteTimeCheck noteTimeCheck;
     private GameObject[] notes;
