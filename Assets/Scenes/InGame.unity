@@ -1434,11 +1434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a835fecae3407740a870015d2ea1efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentTime: 0
-  currentNoteTime1: 0
-  currentNoteTime2: 0
-  currentNoteTime3: 0
-  currentNoteTime4: 0
 --- !u!4 &2116591100
 Transform:
   m_ObjectHideFlags: 0
