@@ -32,7 +32,7 @@ public class MusicManager : MonoBehaviour
         isGameEnd = !music.isPlaying;
         if (isGameEnd)
         {
-            SceneManager.LoadScene("End");
+            //
         }
     }
 }
