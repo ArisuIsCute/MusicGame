@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Score : MonoBehaviour
@@ -12,6 +13,12 @@ public class Score : MonoBehaviour
     public int GoodCnt { private set; get; }
     public int GreatCnt { private set; get; }
 
+    [SerializeField] private TextMeshProUGUI comboText;
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI rankText;
+
+    private string rankStr = "";
+    
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -31,21 +38,25 @@ public class Score : MonoBehaviour
     {
         if (rank.Equals(0))
         {
+            rankStr = "MISS";
             Combo = 0;
             MusicScore -= 30;
             MissCnt++;
         }else if (rank.Equals(1))
         {
+            rankStr = "GOOD";
             Combo++;
             MusicScore += 50;
             GoodCnt++;
         }else if (rank.Equals(2))
         {
+            rankStr = "PERFECT";
             Combo++;
             MusicScore += 100;
             GreatCnt++;
         }
         SetMaxCombo();
+        SetTexts();
     }
 
     private void SetMaxCombo()
@@ -54,5 +65,12 @@ public class Score : MonoBehaviour
         {
             MaxCombo = Combo;
         }
+    }
+
+    private void SetTexts()
+    {
+        rankText.text = rankStr;
+        scoreText.text = MusicScore.ToString();
+        comboText.text = Combo.ToString();
     }
 }
