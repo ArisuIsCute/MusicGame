@@ -1434,6 +1434,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a835fecae3407740a870015d2ea1efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTime: 0
+  currentNoteTime1: 0
+  currentNoteTime2: 0
+  currentNoteTime3: 0
+  currentNoteTime4: 0
 --- !u!4 &2116591100
 Transform:
   m_ObjectHideFlags: 0
@@ -1585,12 +1590,12 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 4983436688536920362}
   - {fileID: 739668577}
-  - {fileID: 2116591100}
   - {fileID: 1373939589}
   - {fileID: 2033982995}
   - {fileID: 429571292}
   - {fileID: 1259605432}
   - {fileID: 1278268353}
+  - {fileID: 2116591100}
   - {fileID: 1406317219}
   - {fileID: 1273480897}
   - {fileID: 2146737610}

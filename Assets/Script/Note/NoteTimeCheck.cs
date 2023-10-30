@@ -15,8 +15,8 @@ public class NoteTimeCheck : MonoBehaviour
     private float goodRate = 7050f;
     private float missRate = 16100f;
 
-    private int lineNumber;
-
+    private int lineNum;
+    
     private Queue<float> noteTimeLine1 = new Queue<float>();
     private Queue<float> noteTimeLine2 = new Queue<float>();
     private Queue<float> noteTimeLine3 = new Queue<float>();
@@ -25,7 +25,6 @@ public class NoteTimeCheck : MonoBehaviour
     private Sheet sheet;
     private MusicManager musicManager;
     private Score score;
-
     private void Start()
     {
         sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
@@ -38,12 +37,12 @@ public class NoteTimeCheck : MonoBehaviour
     private void Update()
     {
         currentTime = musicManager.music.timeSamples;
-
+        
         if (noteTimeLine1.Count > 0)
         {
             currentNoteTime1 = noteTimeLine1.Peek();
             currentNoteTime1 = currentNoteTime1 * 0.001f * musicManager.music.clip.frequency;
-
+            
             if (currentNoteTime1 + missRate < currentTime)
             {
                 score.SetScore(0);
@@ -55,8 +54,8 @@ public class NoteTimeCheck : MonoBehaviour
         {
             currentNoteTime2 = noteTimeLine2.Peek();
             currentNoteTime2 = currentNoteTime2 * 0.001f * musicManager.music.clip.frequency;
-
-            if (currentNoteTime2 + missRate < currentTime)
+            
+            if (currentNoteTime2 + missRate <= currentTime)
             {
                 score.SetScore(0);
                 noteTimeLine2.Dequeue();
@@ -67,8 +66,8 @@ public class NoteTimeCheck : MonoBehaviour
         {
             currentNoteTime3 = noteTimeLine3.Peek();
             currentNoteTime3 = currentNoteTime3 * 0.001f * musicManager.music.clip.frequency;
-
-            if (currentNoteTime3 + missRate < currentTime)
+            
+            if (currentNoteTime3 + missRate <= currentTime)
             {
                 score.SetScore(0);
                 noteTimeLine3.Dequeue();
@@ -79,8 +78,8 @@ public class NoteTimeCheck : MonoBehaviour
         {
             currentNoteTime4 = noteTimeLine4.Peek();
             currentNoteTime4 = currentNoteTime4 * 0.001f * musicManager.music.clip.frequency;
-
-            if (currentNoteTime4 + missRate < currentTime)
+            
+            if (currentNoteTime4 + missRate <= currentTime)
             {
                 score.SetScore(0);
                 noteTimeLine4.Dequeue();
@@ -90,9 +89,9 @@ public class NoteTimeCheck : MonoBehaviour
 
     public void TapNote(int lineNum)
     {
-        this.lineNumber = lineNum;
+        this.lineNum = lineNum;
 
-        if (lineNumber.Equals(1))
+        if (lineNum.Equals(1))
         {
             if (Mathf.Abs(currentNoteTime1 - currentTime) <= greatRate)
             {
@@ -108,8 +107,8 @@ public class NoteTimeCheck : MonoBehaviour
                 noteTimeLine1.Dequeue();
             }
         }
-        
-        if (lineNumber.Equals(2))
+
+        if (lineNum.Equals(2))
         {
             if (Mathf.Abs(currentNoteTime2 - currentTime) <= greatRate)
             {
@@ -125,8 +124,8 @@ public class NoteTimeCheck : MonoBehaviour
                 noteTimeLine2.Dequeue();
             }
         }
-        
-        if (lineNumber.Equals(3))
+
+        if (lineNum.Equals(3))
         {
             if (Mathf.Abs(currentNoteTime3 - currentTime) <= greatRate)
             {
@@ -142,8 +141,8 @@ public class NoteTimeCheck : MonoBehaviour
                 noteTimeLine3.Dequeue();
             }
         }
-        
-        if (lineNumber.Equals(4))
+
+        if (lineNum.Equals(4))
         {
             if (Mathf.Abs(currentNoteTime4 - currentTime) <= greatRate)
             {
