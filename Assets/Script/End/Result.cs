@@ -19,11 +19,11 @@ public class NewBehaviourScript : MonoBehaviour
     {
         score = GameObject.Find("Score").GetComponent<Score>();
 
-        comboText.text = score.Combo.ToString();
-        maxComboText.text = score.MaxCombo.ToString();
-        missCountText.text = score.MissCnt.ToString();
-        goodCountText.text = score.GoodCnt.ToString();
-        greatCountText.text = score.GreatCnt.ToString();
-        scoreText.text = score.MusicScore.ToString();
+        comboText.text = "Combo : " + score.Combo.ToString();
+        maxComboText.text = "MaxCombo : " + score.MaxCombo.ToString();
+        missCountText.text = "Miss : " + score.MissCnt.ToString();
+        goodCountText.text = "Good : " + score.GoodCnt.ToString();
+        greatCountText.text = "Perfect : " + score.GreatCnt.ToString();
+        scoreText.text = "Score : " + score.MusicScore.ToString();
     }
 }
