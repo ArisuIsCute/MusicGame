@@ -93,6 +93,7 @@ public class NoteTimeCheck : MonoBehaviour
 
         if (lineNum.Equals(1))
         {
+            if (noteTimeLine1.Count == 0) return;
             if (Mathf.Abs(currentNoteTime1 - currentTime) <= greatRate)
             {
                 score.SetScore(2);
@@ -110,6 +111,7 @@ public class NoteTimeCheck : MonoBehaviour
 
         if (lineNum.Equals(2))
         {
+            if (noteTimeLine2.Count == 0) return;
             if (Mathf.Abs(currentNoteTime2 - currentTime) <= greatRate)
             {
                 score.SetScore(2);
@@ -127,6 +129,7 @@ public class NoteTimeCheck : MonoBehaviour
 
         if (lineNum.Equals(3))
         {
+            if (noteTimeLine3.Count == 0) return;
             if (Mathf.Abs(currentNoteTime3 - currentTime) <= greatRate)
             {
                 score.SetScore(2);
@@ -144,6 +147,7 @@ public class NoteTimeCheck : MonoBehaviour
 
         if (lineNum.Equals(4))
         {
+            if (noteTimeLine4.Count == 0) return;
             if (Mathf.Abs(currentNoteTime4 - currentTime) <= greatRate)
             {
                 score.SetScore(2);

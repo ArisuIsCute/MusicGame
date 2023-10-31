@@ -25,7 +25,7 @@ public class NoteGenerator : MonoBehaviour
 
         scrollSpeed = 17f;
         notePosY = scrollSpeed;
-        noteStartPosY = scrollSpeed * 3f;
+        noteStartPosY = scrollSpeed * 2.9f;
     }
 
     private void Update()

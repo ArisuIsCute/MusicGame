@@ -27,7 +27,7 @@ public class MusicManager : MonoBehaviour
     public void StartMusicForPlay()
     {
         music.timeSamples = 0;
-        music.PlayDelayed(3.0f + (sheetPaser.rateTime * 0.001f));
+        music.PlayDelayed(3.0f);
     }
 
     public void FinshMusic()
