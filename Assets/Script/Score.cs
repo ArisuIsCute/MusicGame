@@ -16,6 +16,7 @@ public class Score : MonoBehaviour
     [SerializeField] private TextMeshProUGUI comboText;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI rankText;
+    [SerializeField] private TextMeshProUGUI maxComboText;
 
     private string rankStr = "";
     
@@ -72,7 +73,8 @@ public class Score : MonoBehaviour
     private void SetTexts()
     {
         rankText.text = rankStr;
-        scoreText.text = MusicScore.ToString();
         comboText.text = Combo.ToString();
+        maxComboText.text = MaxCombo.ToString();
+        scoreText.text = MusicScore.ToString();
     }
 }
