@@ -1364,6 +1364,7 @@ MonoBehaviour:
   goodCountText: {fileID: 1363104422}
   greatCountText: {fileID: 1348579445}
   scoreText: {fileID: 702749598}
+  rankText: {fileID: 927185619}
 --- !u!4 &1401062645
 Transform:
   m_ObjectHideFlags: 0
