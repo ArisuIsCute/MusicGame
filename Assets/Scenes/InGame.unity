@@ -265,7 +265,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dcfddae8c6b4294fb980f889bca3a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: 7d8110d28377897439990a5182e9216d, type: 3}
+  textAsset: {fileID: 4900000, guid: 947129eb70825474ca408b8502ec07f1, type: 3}
+  noteCount: 0
   rateTime: 0
 --- !u!4 &429571292
 Transform:
@@ -584,7 +585,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: fa07c0bae32e9e142a4526de5b94c612, type: 3}
+  m_audioClip: {fileID: 8300000, guid: e0dc8da0193fe684694715a9b890b75e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -683,7 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 1259605430}
-  clip: {fileID: 8300000, guid: fa07c0bae32e9e142a4526de5b94c612, type: 3}
+  clip: {fileID: 8300000, guid: e0dc8da0193fe684694715a9b890b75e, type: 3}
   isGameEnd: 0
 --- !u!4 &1259605432
 Transform:
