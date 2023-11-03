@@ -15,6 +15,9 @@ public class GetKey : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        
         noteTimeCheck = GameObject.Find("NoteTimeCheck").GetComponent<NoteTimeCheck>();
         
         key1 = KeyCode.A;
