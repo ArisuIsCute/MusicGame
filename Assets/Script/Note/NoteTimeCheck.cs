@@ -23,6 +23,7 @@ public class NoteTimeCheck : MonoBehaviour
     private Queue<float> noteTimeLine2 = new Queue<float>();
     private Queue<float> noteTimeLine3 = new Queue<float>();
     private Queue<float> noteTimeLine4 = new Queue<float>();
+    public bool isEnd;
 
     private Sheet sheet;
     private MusicManager musicManager;
@@ -200,6 +201,9 @@ public class NoteTimeCheck : MonoBehaviour
                 noteTimeLine4.Dequeue();
             }
         }
+
+        if (noteTimeLine1.Count == 0 && noteTimeLine2.Count == 0 && noteTimeLine3.Count == 0 &&
+            noteTimeLine4.Count == 0) isEnd = true;
     }
 
     private void SetQueue()

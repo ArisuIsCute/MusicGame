@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dcfddae8c6b4294fb980f889bca3a6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textAsset: {fileID: 4900000, guid: 947129eb70825474ca408b8502ec07f1, type: 3}
+  textAsset: {fileID: 4900000, guid: b34375c7d71c1684d8d071b52f2b1fdf, type: 3}
   noteCount: 0
   rateTime: 0
 --- !u!4 &429571292
@@ -585,7 +585,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e0dc8da0193fe684694715a9b890b75e, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 869495468519be3478eb2a8d73fca0c7, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -684,8 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   music: {fileID: 1259605430}
-  clip: {fileID: 8300000, guid: e0dc8da0193fe684694715a9b890b75e, type: 3}
-  isGameEnd: 0
+  clip: {fileID: 8300000, guid: 869495468519be3478eb2a8d73fca0c7, type: 3}
 --- !u!4 &1259605432
 Transform:
   m_ObjectHideFlags: 0
@@ -1572,6 +1571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a835fecae3407740a870015d2ea1efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnd: 0
 --- !u!4 &2116591100
 Transform:
   m_ObjectHideFlags: 0

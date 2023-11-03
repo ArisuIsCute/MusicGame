@@ -9,9 +9,8 @@ public class MusicManager : MonoBehaviour
     public AudioSource music;
     public AudioClip clip;
 
-    public bool isGameEnd;
-
     private SheetPaser sheetPaser;
+    private NoteTimeCheck noteTimeCheck;
     
     private void Awake()
     {
@@ -20,6 +19,7 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
+        noteTimeCheck = GameObject.Find("NoteTimeCheck").GetComponent<NoteTimeCheck>();
         sheetPaser = GameObject.Find("SheetPaser").GetComponent<SheetPaser>();
         music = GetComponent<AudioSource>();
     }
@@ -32,10 +32,16 @@ public class MusicManager : MonoBehaviour
 
     public void FinshMusic()
     {
-        isGameEnd = !music.isPlaying;
-        if (isGameEnd)
+        if (noteTimeCheck.isEnd)
         {
-            SceneManager.LoadScene("Result");
+            StartCoroutine(LoadResult());
         }
+    }
+
+    private IEnumerator LoadResult()
+    {
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Result");
+        yield break;
     }
 }
