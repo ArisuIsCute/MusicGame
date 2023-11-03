@@ -11,6 +11,8 @@ public class NewBehaviourScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI missCountText;
     [SerializeField] private TextMeshProUGUI goodCountText;
     [SerializeField] private TextMeshProUGUI greatCountText;
+    [SerializeField] private TextMeshProUGUI perfectCountText;
+    [SerializeField] private TextMeshProUGUI maxPerfectCountText;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI rankText;
     
@@ -37,7 +39,9 @@ public class NewBehaviourScript : MonoBehaviour
         maxComboText.text = "MaxCombo : " + score.MaxCombo.ToString();
         missCountText.text = "Miss : " + score.MissCnt.ToString();
         goodCountText.text = "Good : " + score.GoodCnt.ToString();
-        greatCountText.text = "Perfect : " + score.GreatCnt.ToString();
+        greatCountText.text = "Great : " + score.GreatCnt.ToString();
+        perfectCountText.text = "Perfect : " + score.PerfectCnt.ToString();
+        maxPerfectCountText.text = "MaxPerfect : " + score.MaxPerfectCnt.ToString();
         scoreText.text = "Score : " + score.MusicScore.ToString();
     }
 }

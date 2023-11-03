@@ -13,6 +13,7 @@ public class SheetPaser : MonoBehaviour
     private string[] textSplit;
     private string sheetText = "";
 
+    public int noteCount;
     private int lineNumber;
     private float noteTime;
 
@@ -69,7 +70,7 @@ public class SheetPaser : MonoBehaviour
                     };
 
                     sheet.SetNote(lineNumber, noteTime);
-                    
+                    noteCount++;
                     sheetText = strReader.ReadLine();
                 }
             }

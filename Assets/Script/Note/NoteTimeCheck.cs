@@ -11,9 +11,11 @@ public class NoteTimeCheck : MonoBehaviour
     private float currentNoteTime3;
     private float currentNoteTime4;
 
-    private float greatRate = 3025f;
-    private float goodRate = 7050f;
-    private float missRate = 16100f;
+    private float maxPerfectRate = 2500f;
+    private float perFectRate = 5000f;
+    private float greatRate = 7000f;
+    private float goodRate = 11000f;
+    private float missRate = 16000f;
 
     private int lineNum;
     
@@ -94,7 +96,16 @@ public class NoteTimeCheck : MonoBehaviour
         if (lineNum.Equals(1))
         {
             if (noteTimeLine1.Count == 0) return;
-            if (Mathf.Abs(currentNoteTime1 - currentTime) <= greatRate)
+            
+            if (Mathf.Abs(currentNoteTime1 - currentTime) <= maxPerfectRate)
+            {
+                score.SetScore(4);
+                noteTimeLine1.Dequeue();
+            }else if (Mathf.Abs(currentNoteTime1 - currentTime) <= perFectRate)
+            {
+                score.SetScore(3);
+                noteTimeLine1.Dequeue();
+            }else if (Mathf.Abs(currentNoteTime1 - currentTime) <= greatRate)
             {
                 score.SetScore(2);
                 noteTimeLine1.Dequeue();
@@ -112,7 +123,16 @@ public class NoteTimeCheck : MonoBehaviour
         if (lineNum.Equals(2))
         {
             if (noteTimeLine2.Count == 0) return;
-            if (Mathf.Abs(currentNoteTime2 - currentTime) <= greatRate)
+            
+            if (Mathf.Abs(currentNoteTime2 - currentTime) <= maxPerfectRate)
+            {
+                score.SetScore(4);
+                noteTimeLine2.Dequeue();
+            }else if (Mathf.Abs(currentNoteTime2 - currentTime) <= perFectRate)
+            {
+                score.SetScore(3);
+                noteTimeLine2.Dequeue();
+            }else if (Mathf.Abs(currentNoteTime2 - currentTime) <= greatRate)
             {
                 score.SetScore(2);
                 noteTimeLine2.Dequeue();
@@ -130,7 +150,16 @@ public class NoteTimeCheck : MonoBehaviour
         if (lineNum.Equals(3))
         {
             if (noteTimeLine3.Count == 0) return;
-            if (Mathf.Abs(currentNoteTime3 - currentTime) <= greatRate)
+            
+            if (Mathf.Abs(currentNoteTime3 - currentTime) <= maxPerfectRate)
+            {
+                score.SetScore(4);
+                noteTimeLine3.Dequeue();
+            }else if (Mathf.Abs(currentNoteTime3 - currentTime) <= perFectRate)
+            {
+                score.SetScore(3);
+                noteTimeLine3.Dequeue();
+            }else if (Mathf.Abs(currentNoteTime3 - currentTime) <= greatRate)
             {
                 score.SetScore(2);
                 noteTimeLine3.Dequeue();
@@ -148,7 +177,16 @@ public class NoteTimeCheck : MonoBehaviour
         if (lineNum.Equals(4))
         {
             if (noteTimeLine4.Count == 0) return;
-            if (Mathf.Abs(currentNoteTime4 - currentTime) <= greatRate)
+            
+            if (Mathf.Abs(currentNoteTime4 - currentTime) <= maxPerfectRate)
+            {
+                score.SetScore(4);
+                noteTimeLine4.Dequeue();
+            }else if (Mathf.Abs(currentNoteTime4 - currentTime) <= perFectRate)
+            {
+                score.SetScore(3);
+                noteTimeLine4.Dequeue();
+            }else if (Mathf.Abs(currentNoteTime4 - currentTime) <= greatRate)
             {
                 score.SetScore(2);
                 noteTimeLine4.Dequeue();
