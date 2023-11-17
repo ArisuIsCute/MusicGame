@@ -8,7 +8,11 @@ public class ButtonManager : MonoBehaviour
 {
     public void StartButton()
     {
-        
+        SceneManager.LoadScene("SelecSongs");
+    }
+    
+    public void GameStartButton()
+    {
         SceneManager.LoadScene("InGame");
     }
 
