@@ -19,13 +19,10 @@ public class SheetPaser : MonoBehaviour
 
     private Sheet sheet;
 
-    private void Awake()
+    public void StartPaserSheet(string patch)
     {
+        textAsset = Resources.Load<TextAsset>(patch);
         strReader = new StringReader(textAsset.text);
-    }
-
-    private void Start()
-    {
         sheetText = strReader.ReadLine();
 
         while (sheetText != null)
@@ -33,7 +30,21 @@ public class SheetPaser : MonoBehaviour
             if (sheetText == "[HitObjects]")
             {
                 sheetText = strReader.ReadLine();
-            }   
+                if (sheetText != null) textSplit = sheetText.Split(",");
+                lineNum = textSplit[0] switch
+                {
+                    "64" => 1,
+                    "192" => 2,
+                    "320" => 3,
+                    "448" => 4,
+                    _ => lineNum
+                };
+                noteCount++;
+                noteTime = int.Parse(textSplit[2]);
+                sheet.SetNote(lineNum, noteTime);
+            }
+
+            sheetText = strReader.ReadLine();
         }
     }
 }

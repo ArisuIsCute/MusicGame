@@ -40,4 +40,9 @@ public class UiManager : MonoBehaviour
         UpdateUi(Math.Abs(--idx) % songList.songCnt);
         music.PlayMusicForSelect(songList.songAudioPatchList[idx]);
     }
+
+    public void SelectSong()
+    {
+        
+    }
 }

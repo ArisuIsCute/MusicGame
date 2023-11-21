@@ -15,7 +15,7 @@ public class Sheet : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void SetNdte(int line, float noteTime)
+    public void SetNote(int line, float noteTime)
     {
         switch (line)
         {
