@@ -25,6 +25,11 @@ public class Music : MonoBehaviour
         audio.clip = Resources.Load<AudioClip>(patch);
         audio.Play();
     }
+
+    public void PlayMusicForInGame()
+    {
+        audio.PlayDelayed(3.0f);
+    }
     
     public void StopThisSong()
     {
