@@ -12,10 +12,12 @@ public class UiManager : MonoBehaviour
     public int idx;
     
     private LoadSongList songList;
+    private SheetPaser sheetPaser;
     private Music music;
 
     private void Start()
     {
+        sheetPaser = GameObject.Find("SheetPaser").GetComponent<SheetPaser>();
         songList = GameObject.Find("LoadSongList").GetComponent<LoadSongList>();
         music = GameObject.Find("Music").GetComponent<Music>();
         UpdateUi(0);
@@ -27,6 +29,7 @@ public class UiManager : MonoBehaviour
         songName.text = songList.songNameList[idx];
         songComposer.text = songList.songComposerList[idx];
         music.PlayMusicForSelect(songList.songAudioPatchList[idx]);
+        sheetPaser.StartPaserSheet(songList.songSheetPatchList[idx]);
     }
 
     public void NextList()
@@ -39,10 +42,5 @@ public class UiManager : MonoBehaviour
     {
         UpdateUi(Math.Abs(--idx) % songList.songCnt);
         music.PlayMusicForSelect(songList.songAudioPatchList[idx]);
-    }
-
-    public void SelectSong()
-    {
-        
     }
 }

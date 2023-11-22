@@ -11,6 +11,7 @@ public class LoadSongList : MonoBehaviour
     public List<string> songNameList = new List<string>();
     public List<string> songComposerList = new List<string>();
     public List<string> songAudioPatchList = new List<string>();
+    public List<string> songSheetPatchList = new List<string>();
     public int songCnt = 0;
     
     private void Awake()
@@ -36,6 +37,7 @@ public class LoadSongList : MonoBehaviour
                     if(splitData[0] == "SongName") songNameList.Add(splitData[1]);
                     if(splitData[0] == "Composer") songComposerList.Add(splitData[1]);
                     if(splitData[0] == "AudioPatch") songAudioPatchList.Add(splitData[1]);
+                    if(splitData[0] == "SheetPatch") songSheetPatchList.Add(splitData[1]);
                 }
             }
         }

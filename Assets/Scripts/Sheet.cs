@@ -15,6 +15,14 @@ public class Sheet : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void ResetSheet()
+    {
+        noteLine1.RemoveRange(0, noteLine1.Count);
+        noteLine2.RemoveRange(0, noteLine2.Count);
+        noteLine3.RemoveRange(0, noteLine3.Count);
+        noteLine4.RemoveRange(0, noteLine4.Count);
+    }
+
     public void SetNote(int line, float noteTime)
     {
         switch (line)
