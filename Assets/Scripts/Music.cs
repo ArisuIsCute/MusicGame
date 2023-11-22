@@ -31,6 +31,11 @@ public class Music : MonoBehaviour
         audio.Stop();
         audio.PlayDelayed(3.0f);
     }
+
+    public void CheckIsFinish()
+    {
+        if (audio.isPlaying) return;
+    }
     
     public void StopThisSong()
     {
