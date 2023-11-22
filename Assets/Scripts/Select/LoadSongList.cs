@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class LoadSongList : MonoBehaviour
 {
-    private string patch = Application.dataPath + "/Resources/";
+    private string patch = Application.dataPath + "/Resources/Songs/";
 
     public List<string> songNameList = new List<string>();
     public List<string> songComposerList = new List<string>();
