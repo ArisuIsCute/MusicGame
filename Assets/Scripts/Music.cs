@@ -28,6 +28,7 @@ public class Music : MonoBehaviour
 
     public void PlayMusicForInGame()
     {
+        audio.Stop();
         audio.PlayDelayed(3.0f);
     }
     
