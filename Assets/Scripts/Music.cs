@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Music : MonoBehaviour
 {
-    private AudioSource audio;
+    public AudioSource audio;
 
     private void Awake()
     {
