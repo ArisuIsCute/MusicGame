@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Music : MonoBehaviour
 {
@@ -30,11 +31,20 @@ public class Music : MonoBehaviour
     {
         audio.Stop();
         audio.PlayDelayed(3.0f);
+        StartCoroutine(CheckEnd());
     }
 
-    public void CheckIsFinish()
+    private IEnumerator CheckEnd()
     {
-        if (audio.isPlaying) return;
+        if (audio.isPlaying)
+        {
+            yield return new WaitForSeconds(.5f);
+            StartCoroutine(CheckEnd());
+        }
+        else
+        {
+            SceneManager.LoadScene("Result");
+        }
     }
     
     public void StopThisSong()
