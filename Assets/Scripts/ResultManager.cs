@@ -23,7 +23,7 @@ public class ResultManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         
-        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        scoreManager = ScoreManager.instance;
         
         score.text = Math.Truncate(scoreManager.score).ToString();
         

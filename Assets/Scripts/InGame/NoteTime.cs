@@ -30,9 +30,9 @@ public class NoteTime : MonoBehaviour
 
     private void Start()
     {
-        sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
-        music = GameObject.Find("Music").GetComponent<Music>();
-        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        sheet = Sheet.instance;
+        music = Music.instance;
+        scoreManager = ScoreManager.instance;
         
         SetQueue();
     }

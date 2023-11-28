@@ -56,10 +56,4 @@ public class Music : MonoBehaviour
             SceneManager.LoadScene("Result");
         }
     }
-    
-    public void StopThisSong()
-    {
-        if (audio.clip == null) return;
-        audio.Stop();
-    }
 }

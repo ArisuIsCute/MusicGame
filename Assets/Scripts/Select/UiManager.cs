@@ -17,9 +17,9 @@ public class UiManager : MonoBehaviour
 
     private void Start()
     {
-        sheetPaser = GameObject.Find("SheetPaser").GetComponent<SheetPaser>();
-        songList = GameObject.Find("LoadSongList").GetComponent<LoadSongList>();
-        music = GameObject.Find("Music").GetComponent<Music>();
+        sheetPaser = SheetPaser.instance;
+        songList = LoadSongList.instance;
+        music = Music.instance;
         UpdateUi(0);
     }
 
