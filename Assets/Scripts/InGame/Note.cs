@@ -19,6 +19,7 @@ public class Note : MonoBehaviour
     private void Update()
     {
         transform.Translate(Vector3.down * (speed * Time.smoothDeltaTime));
+        if(transform.position.y < - 10f) Destroy(gameObject);
     }
 
     private void OnBecameInvisible()

@@ -11,7 +11,7 @@ public class NoteGenerator : MonoBehaviour
     private float notePosY;
     private float noteStartPosY;
 
-    private float noteCurrentRate = 0.001f;
+    private const float NoteCurrentRate = 0.001f;
 
     private bool isSpwanFin = false;
 
@@ -25,7 +25,7 @@ public class NoteGenerator : MonoBehaviour
 
         scrollSpeed = 17f;
         notePosY = scrollSpeed;
-        noteStartPosY = scrollSpeed * 3.0f;
+        noteStartPosY = scrollSpeed * 2.53f;
     }
 
     private void Update()
@@ -47,7 +47,7 @@ public class NoteGenerator : MonoBehaviour
     {
         foreach (var noteTime in noteList)
         {
-            posY = noteStartPosY + notePosY * (noteTime * noteCurrentRate) + offset.y;
+            posY = noteStartPosY + notePosY * (noteTime * NoteCurrentRate) + offset.y;
             Instantiate(notePrefab, new Vector3(offset.x, posY, offset.z), Quaternion.identity);
         }
     }
