@@ -34,7 +34,7 @@ public class ResultManager : MonoBehaviour
         great.text += scoreManager.greatCnt.ToString();
         good.text += scoreManager.goodCnt.ToString();
         bad.text += scoreManager.badCnt.ToString();
-        miss.text += scoreManager.badCnt.ToString();
+        miss.text += scoreManager.missCnt.ToString();
     }
 
     public void Exit()
