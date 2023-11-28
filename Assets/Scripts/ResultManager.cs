@@ -23,14 +23,15 @@ public class ResultManager : MonoBehaviour
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         
         score.text = Math.Truncate(scoreManager.score).ToString();
-        combo.text = scoreManager.combo.ToString();
-        maxCombo.text = scoreManager.maxCombo.ToString();
+        
+        combo.text += scoreManager.combo.ToString();
+        maxCombo.text += scoreManager.maxCombo.ToString();
 
-        perfect.text = scoreManager.perfectCnt.ToString();
-        great.text = scoreManager.greatCnt.ToString();
-        good.text = scoreManager.goodCnt.ToString();
-        bad.text = scoreManager.badCnt.ToString();
-        miss.text = scoreManager.badCnt.ToString();
+        perfect.text += scoreManager.perfectCnt.ToString();
+        great.text += scoreManager.greatCnt.ToString();
+        good.text += scoreManager.goodCnt.ToString();
+        bad.text += scoreManager.badCnt.ToString();
+        miss.text += scoreManager.badCnt.ToString();
     }
 
     public void Exit()
