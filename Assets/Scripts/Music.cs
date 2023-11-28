@@ -7,11 +7,21 @@ using UnityEngine.SceneManagement;
 
 public class Music : MonoBehaviour
 {
+    public static Music instance = null;
+    
     public AudioSource audio;
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(gameObject);
+        
         audio = GetComponent<AudioSource>();
     }
 

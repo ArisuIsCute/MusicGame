@@ -20,6 +20,9 @@ public class ResultManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+        
         scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         
         score.text = Math.Truncate(scoreManager.score).ToString();

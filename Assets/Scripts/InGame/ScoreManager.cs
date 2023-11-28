@@ -24,8 +24,6 @@ public class ScoreManager : MonoBehaviour
     public int goodCnt;
     public int badCnt;
     public int missCnt;
-    
-    private SheetPaser sheetPaser;
 
     private void Awake()
     {
@@ -34,9 +32,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
-        sheetPaser = GameObject.Find("SheetPaser").GetComponent<SheetPaser>();
-
-        baseScore = 1000000f / sheetPaser.noteCount;
+        baseScore = 1000000f / SheetPaser.instance.noteCount;
         perfectScore = baseScore;
         greatScore = baseScore * 0.33f;
         goodScore = baseScore * 0.042f;

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class LoadSongList : MonoBehaviour
 {
+    public static LoadSongList instance = null;
+    
     private string patch = Application.dataPath + "/Resources/Songs/";
 
     public List<string> songNameList = new List<string>();
@@ -16,6 +18,13 @@ public class LoadSongList : MonoBehaviour
     
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(gameObject);
         AddSongInfo();
     }

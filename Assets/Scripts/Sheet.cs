@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Sheet : MonoBehaviour
 {
+    public static Sheet instance = null;
+    
     public List<float> noteLine1;
     public List<float> noteLine2;
     public List<float> noteLine3;
@@ -12,6 +14,13 @@ public class Sheet : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(gameObject);
     }
 

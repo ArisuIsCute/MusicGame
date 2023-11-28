@@ -6,13 +6,8 @@ using Random = UnityEngine.Random;
 
 public class Title : MonoBehaviour
 {
-    private LoadSongList list;
-    private Music music;
-
     private void Start()
     {
-        music = GameObject.Find("Music").GetComponent<Music>();
-        list = GameObject.Find("LoadSongList").GetComponent<LoadSongList>();
-        music.PlayMusicForTitle(list.songAudioPatchList[Random.Range(0, list.songAudioPatchList.Count)]);
+        Music.instance.PlayMusicForTitle(LoadSongList.instance.songAudioPatchList[Random.Range(0, LoadSongList.instance.songAudioPatchList.Count)]);
     }
 }

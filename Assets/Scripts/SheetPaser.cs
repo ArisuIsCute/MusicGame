@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class SheetPaser : MonoBehaviour
 {
+    public static SheetPaser instance = null;
+    
     [SerializeField] private TextAsset textAsset;
 
     private StringReader strReader;
@@ -21,6 +23,13 @@ public class SheetPaser : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
         DontDestroyOnLoad(gameObject);
     }
 

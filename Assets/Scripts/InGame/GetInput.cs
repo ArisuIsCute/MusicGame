@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GetInput : MonoBehaviour
 {
@@ -26,5 +27,7 @@ public class GetInput : MonoBehaviour
         if(Input.GetKeyDown(key2)) noteTime.TapNote(2);
         if(Input.GetKeyDown(key3)) noteTime.TapNote(3);
         if(Input.GetKeyDown(key4)) noteTime.TapNote(4);
+
+        if (Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene("Result");
     }
 }
