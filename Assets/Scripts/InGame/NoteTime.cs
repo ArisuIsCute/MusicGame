@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class NoteTime : MonoBehaviour
 {
-    private float currentTime;
+    private float currentTime = 0f;
     private float currentNoteTime1;
     private float currentNoteTime2;
     private float currentNoteTime3;
@@ -27,18 +27,20 @@ public class NoteTime : MonoBehaviour
 
     private Sheet sheet;
     private Music music;
+    private ScoreManager scoreManager;
 
     private void Start()
     {
         sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
         music = GameObject.Find("Music").GetComponent<Music>();
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
         
         SetQueue();
     }
 
     private void Update()
     {
-        currentTime += music.audio.timeSamples;
+        currentTime = music.audio.timeSamples;
 
         if (noteTimeLine1.Count > 0)
         {
@@ -47,6 +49,7 @@ public class NoteTime : MonoBehaviour
 
             if (currentNoteTime1 + missRate < currentTime)
             {
+                scoreManager.AddScore(5);
                 noteTimeLine1.Dequeue();
             }
         }
@@ -58,6 +61,7 @@ public class NoteTime : MonoBehaviour
 
             if (currentNoteTime2 + missRate < currentTime)
             {
+                scoreManager.AddScore(5);
                 noteTimeLine2.Dequeue();
             }
         }
@@ -69,6 +73,7 @@ public class NoteTime : MonoBehaviour
 
             if (currentNoteTime3 + missRate < currentTime)
             {
+                scoreManager.AddScore(5);
                 noteTimeLine3.Dequeue();
             }
         }
@@ -80,6 +85,7 @@ public class NoteTime : MonoBehaviour
 
             if (currentNoteTime4 + missRate < currentTime)
             {
+                scoreManager.AddScore(5);
                 noteTimeLine4.Dequeue();
             }
         }
@@ -95,18 +101,23 @@ public class NoteTime : MonoBehaviour
 
             if (Math.Abs(currentNoteTime1 - currentTime) <= perfectRate)
             {
+                scoreManager.AddScore(1);
                 noteTimeLine1.Dequeue();
             }else if (Math.Abs(currentNoteTime1 - currentTime) <= greatRate)
             {
+                scoreManager.AddScore(2);
                 noteTimeLine1.Dequeue();
             }else if (Math.Abs(currentNoteTime1 - currentTime) <= goodRate)
             {
+                scoreManager.AddScore(3);
                 noteTimeLine1.Dequeue();
             }else if (Math.Abs(currentNoteTime1 - currentTime) <= badRate)
             {
+                scoreManager.AddScore(4);
                 noteTimeLine1.Dequeue();
             }else if (currentNoteTime1 + missRate <= currentTime)
             {
+                scoreManager.AddScore(5);
                 noteTimeLine1.Dequeue();
             }
         }
@@ -117,18 +128,23 @@ public class NoteTime : MonoBehaviour
 
             if (Math.Abs(currentNoteTime2 - currentTime) <= perfectRate)
             {
+                scoreManager.AddScore(1);
                 noteTimeLine2.Dequeue();
             }else if (Math.Abs(currentNoteTime2 - currentTime) <= greatRate)
             {
+                scoreManager.AddScore(2);
                 noteTimeLine2.Dequeue();
             }else if (Math.Abs(currentNoteTime2 - currentTime) <= goodRate)
             {
+                scoreManager.AddScore(3);
                 noteTimeLine2.Dequeue();
             }else if (Math.Abs(currentNoteTime2 - currentTime) <= badRate)
             {
+                scoreManager.AddScore(4);
                 noteTimeLine2.Dequeue();
             }else if (currentNoteTime2 + missRate <= currentTime)
             {
+                scoreManager.AddScore(5);
                 noteTimeLine2.Dequeue();
             }
         }
@@ -139,18 +155,23 @@ public class NoteTime : MonoBehaviour
 
             if (Math.Abs(currentNoteTime3 - currentTime) <= perfectRate)
             {
+                scoreManager.AddScore(1);
                 noteTimeLine3.Dequeue();
             }else if (Math.Abs(currentNoteTime3 - currentTime) <= greatRate)
             {
+                scoreManager.AddScore(2);
                 noteTimeLine3.Dequeue();
             }else if (Math.Abs(currentNoteTime3 - currentTime) <= goodRate)
             {
+                scoreManager.AddScore(3);
                 noteTimeLine3.Dequeue();
             }else if (Math.Abs(currentNoteTime3 - currentTime) <= badRate)
             {
+                scoreManager.AddScore(4);
                 noteTimeLine3.Dequeue();
             }else if (currentNoteTime3 + missRate <= currentTime)
             {
+                scoreManager.AddScore(5);
                 noteTimeLine3.Dequeue();
             }
         }
@@ -161,18 +182,23 @@ public class NoteTime : MonoBehaviour
 
             if (Math.Abs(currentNoteTime4 - currentTime) <= perfectRate)
             {
+                scoreManager.AddScore(1);
                 noteTimeLine4.Dequeue();
             }else if (Math.Abs(currentNoteTime4 - currentTime) <= greatRate)
             {
+                scoreManager.AddScore(2);
                 noteTimeLine4.Dequeue();
             }else if (Math.Abs(currentNoteTime4 - currentTime) <= goodRate)
             {
+                scoreManager.AddScore(3);
                 noteTimeLine4.Dequeue();
             }else if (Math.Abs(currentNoteTime4 - currentTime) <= badRate)
             {
+                scoreManager.AddScore(4);
                 noteTimeLine4.Dequeue();
             }else if (currentNoteTime4 + missRate <= currentTime)
             {
+                scoreManager.AddScore(5);
                 noteTimeLine4.Dequeue();
             }
         }
