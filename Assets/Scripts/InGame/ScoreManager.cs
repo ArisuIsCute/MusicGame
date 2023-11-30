@@ -11,6 +11,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rankText;
     [SerializeField] private TextMeshProUGUI comboText;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI maxComboText;
 
     public float score;
     public int combo;
@@ -41,10 +42,20 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        ResetText();
+        
         baseScore = 1000000f / SheetPaser.instance.noteCount;
         perfectScore = baseScore;
         greatScore = baseScore * 0.33f;
         goodScore = baseScore * 0.042f;
+    }
+
+    private void ResetText()
+    {
+        rankText.text = "";
+        comboText.text = "";
+        maxComboText.text = "";
+        scoreText.text = "";
     }
 
     public void AddScore(int rank)
@@ -90,5 +101,6 @@ public class ScoreManager : MonoBehaviour
     private void GetMaxCombo()
     {
         if (combo > maxCombo) maxCombo = combo;
+        maxComboText.text = maxCombo.ToString();
     }
 }

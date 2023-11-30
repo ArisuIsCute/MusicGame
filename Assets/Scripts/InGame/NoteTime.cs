@@ -23,7 +23,7 @@ public class NoteTime : MonoBehaviour
     private Queue<float> noteTimeLine2 = new Queue<float>();
     private Queue<float> noteTimeLine3 = new Queue<float>();
     private Queue<float> noteTimeLine4 = new Queue<float>();
-
+    
     private Sheet sheet;
     private Music music;
     private ScoreManager scoreManager;

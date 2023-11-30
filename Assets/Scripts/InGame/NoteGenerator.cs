@@ -37,10 +37,10 @@ public class NoteGenerator : MonoBehaviour
 
     private void SpawnNote()
     {
-        SpwanNoteLine(sheet.noteLine1, note, new Vector3(-1.5f, 0f, 0f));
-        SpwanNoteLine(sheet.noteLine2, note, new Vector3(-0.5f, 0f, 0f));
-        SpwanNoteLine(sheet.noteLine3, note, new Vector3(0.5f, 0f, 0f));
-        SpwanNoteLine(sheet.noteLine4, note, new Vector3(1.5f, 0f, 0f));
+        SpwanNoteLine(sheet.noteLine1, note, new Vector3(-2.083f, 0f, 0f));
+        SpwanNoteLine(sheet.noteLine2, note, new Vector3(-0.69f, 0f, 0f));
+        SpwanNoteLine(sheet.noteLine3, note, new Vector3(0.69f, 0f, 0f));
+        SpwanNoteLine(sheet.noteLine4, note, new Vector3(2.083f, 0f, 0f));
     }
 
     private void SpwanNoteLine(List<float> noteList, GameObject notePrefab, Vector3 offset)
