@@ -338,6 +338,7 @@ MonoBehaviour:
   comboText: {fileID: 2017366316}
   scoreText: {fileID: 1271558769}
   maxComboText: {fileID: 2121594830}
+  textBackground: {fileID: 1240752325}
   score: 0
   combo: 0
   maxCombo: 0

@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI comboText;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI maxComboText;
+    [SerializeField] private GameObject textBackground;
 
     public float score;
     public int combo;
@@ -52,6 +53,7 @@ public class ScoreManager : MonoBehaviour
 
     private void ResetText()
     {
+        textBackground.SetActive(false);
         rankText.text = "";
         comboText.text = "";
         maxComboText.text = "";
@@ -60,6 +62,7 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int rank)
     {
+        textBackground.SetActive(true);
         if (rank.Equals(1))
         {
             score += perfectScore;
