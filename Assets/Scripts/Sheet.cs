@@ -13,6 +13,7 @@ public class Sheet : MonoBehaviour
     public List<float> noteLine4;
 
     public string songName;
+    public float speed = 17f;
 
     private void Awake()
     {

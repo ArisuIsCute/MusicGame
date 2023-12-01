@@ -8,7 +8,9 @@ public class UiManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI songName;
     [SerializeField] private TextMeshProUGUI songComposer;
+    [SerializeField] private TextMeshProUGUI songSpeed;
 
+    private float speed;
     public int idx;
     
     private LoadSongList songList;
@@ -20,6 +22,9 @@ public class UiManager : MonoBehaviour
         sheetPaser = SheetPaser.instance;
         songList = LoadSongList.instance;
         music = Music.instance;
+
+        speed = Sheet.instance.speed;
+        songSpeed.text = speed.ToString();
         UpdateUi(0);
     }
 
@@ -48,5 +53,21 @@ public class UiManager : MonoBehaviour
     public void SelectSong()
     {
         music.PlayMusicForInGame();
+    }
+
+    public void SpeedUp()
+    {
+        speed += 1f;
+        speed = Math.Clamp(speed, 5f, 20f);
+        songSpeed.text = speed.ToString();
+        Sheet.instance.speed = speed;
+    }
+
+    public void SpeedDown()
+    {
+        speed -= 1f;
+        speed = Math.Clamp(speed, 5f, 20f);
+        songSpeed.text = speed.ToString();
+        Sheet.instance.speed = speed;
     }
 }

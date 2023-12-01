@@ -21,9 +21,9 @@ public class NoteGenerator : MonoBehaviour
 
     private void Start()
     {
-        sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
+        sheet = Sheet.instance;
 
-        scrollSpeed = 17f;
+        scrollSpeed = sheet.speed;
         notePosY = scrollSpeed;
         noteStartPosY = scrollSpeed * 2.53f;
     }
