@@ -53,7 +53,7 @@ public class NoteTime : MonoBehaviour
             }
         }
 
-        if (noteTimeLine1.Count > 0)
+        if (noteTimeLine2.Count > 0)
         {
             currentNoteTime2 = noteTimeLine2.Peek();
             currentNoteTime2 = currentNoteTime2 * 0.001f * music.audio.clip.frequency;

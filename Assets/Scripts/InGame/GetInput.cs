@@ -19,9 +19,9 @@ public class GetInput : MonoBehaviour
 
     private void Start()
     {
-        // Cursor.visible = false;
-        // Cursor.lockState = CursorLockMode.Locked;
-
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        
         noteTime = GameObject.Find("NoteTime").GetComponent<NoteTime>();
     }
 
@@ -55,8 +55,6 @@ public class GetInput : MonoBehaviour
         if(Input.GetKeyUp(key2)) OffInput(1);
         if(Input.GetKeyUp(key3)) OffInput(2);
         if(Input.GetKeyUp(key4)) OffInput(3);
-
-        if (Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene("Result");
     }
 
     private void OnInput(int line)
