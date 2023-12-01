@@ -1141,6 +1141,7 @@ MonoBehaviour:
   noteLine2: []
   noteLine3: []
   noteLine4: []
+  songName: 
 --- !u!1 &1518733384
 GameObject:
   m_ObjectHideFlags: 0
