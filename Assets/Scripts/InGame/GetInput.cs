@@ -13,13 +13,14 @@ public class GetInput : MonoBehaviour
     public KeyCode key4 = KeyCode.L;
 
     [SerializeField] private GameObject[] inputs;
+    [SerializeField] private GameObject[] effects;
     
     private NoteTime noteTime;
 
     private void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        // Cursor.visible = false;
+        // Cursor.lockState = CursorLockMode.Locked;
 
         noteTime = GameObject.Find("NoteTime").GetComponent<NoteTime>();
     }
@@ -28,43 +29,45 @@ public class GetInput : MonoBehaviour
     {
         if (Input.GetKeyDown(key1))
         {
-            OnInput(1);
+            OnInput(0);
             noteTime.TapNote(1);
         }
 
         if (Input.GetKeyDown(key2))
         {
-            OnInput(2);
+            OnInput(1);
             noteTime.TapNote(2);
         }
 
         if (Input.GetKeyDown(key3))
         {
-            OnInput(3);
+            OnInput(2);
             noteTime.TapNote(3);
         }
 
         if (Input.GetKeyDown(key4))
         {
-            OnInput(4);
+            OnInput(3);
             noteTime.TapNote(4);
         }
         
-        if(Input.GetKeyUp(key1)) OffInput(1);
-        if(Input.GetKeyUp(key2)) OffInput(2);
-        if(Input.GetKeyUp(key3)) OffInput(3);
-        if(Input.GetKeyUp(key4)) OffInput(4);
+        if(Input.GetKeyUp(key1)) OffInput(0);
+        if(Input.GetKeyUp(key2)) OffInput(1);
+        if(Input.GetKeyUp(key3)) OffInput(2);
+        if(Input.GetKeyUp(key4)) OffInput(3);
 
         if (Input.GetKeyDown(KeyCode.Escape)) SceneManager.LoadScene("Result");
     }
 
     private void OnInput(int line)
     {
-        inputs[line - 1].SetActive(true);
+        effects[line].SetActive(true);
+        inputs[line].SetActive(true);
     }
 
     private void OffInput(int line)
     {
-        inputs[line - 1].SetActive(false);
+        effects[line].SetActive(false);
+        inputs[line].SetActive(false);
     }
 }

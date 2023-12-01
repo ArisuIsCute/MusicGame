@@ -12,6 +12,8 @@ public class Sheet : MonoBehaviour
     public List<float> noteLine3;
     public List<float> noteLine4;
 
+    public string songName;
+
     private void Awake()
     {
         if (instance == null)

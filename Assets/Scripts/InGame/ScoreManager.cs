@@ -11,6 +11,7 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI rankText;
     [SerializeField] private TextMeshProUGUI comboText;
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI musicName;
     [SerializeField] private TextMeshProUGUI maxComboText;
     [SerializeField] private GameObject textBackground;
 
@@ -58,6 +59,7 @@ public class ScoreManager : MonoBehaviour
         comboText.text = "";
         maxComboText.text = "";
         scoreText.text = "";
+        musicName.text = Sheet.instance.songName;
     }
 
     public void AddScore(int rank)
