@@ -15,6 +15,8 @@ public class ScoreManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI maxComboText;
     [SerializeField] private GameObject textBackground;
 
+    private const float MaxScore = 1000000f;
+
     public float score;
     public int combo;
     public int maxCombo;
@@ -46,7 +48,7 @@ public class ScoreManager : MonoBehaviour
     {
         ResetText();
         
-        baseScore = 1000000f / SheetPaser.instance.noteCount;
+        baseScore = MaxScore / SheetPaser.instance.noteCount;
         perfectScore = baseScore;
         greatScore = baseScore * 0.33f;
         goodScore = baseScore * 0.042f;
@@ -100,7 +102,7 @@ public class ScoreManager : MonoBehaviour
     private void UpdateUi()
     {
         comboText.text = combo.ToString();
-        scoreText.text = Math.Truncate(score).ToString();
+        scoreText.text = $"{Math.Truncate(score):#,###}";
     }
 
     private void GetMaxCombo()
