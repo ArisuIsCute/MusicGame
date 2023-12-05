@@ -57,7 +57,7 @@ public class ScoreManager : MonoBehaviour
         textBackground.SetActive(false);
         rankText.text = "";
         comboText.text = "";
-        maxComboText.text = "";
+        maxComboText.text = "0";
         scoreText.text = "";
         musicName.text = Sheet.instance.songName;
     }
