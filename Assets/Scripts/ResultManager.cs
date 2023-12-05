@@ -24,17 +24,17 @@ public class ResultManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         
         scoreManager = ScoreManager.instance;
-        
-        score.text = Math.Truncate(scoreManager.score).ToString();
-        
-        combo.text += scoreManager.combo.ToString();
-        maxCombo.text += scoreManager.maxCombo.ToString();
 
-        perfect.text += scoreManager.perfectCnt.ToString();
-        great.text += scoreManager.greatCnt.ToString();
-        good.text += scoreManager.goodCnt.ToString();
-        bad.text += scoreManager.badCnt.ToString();
-        miss.text += scoreManager.missCnt.ToString();
+        score.text = $"{Math.Truncate(scoreManager.score):#,###}";
+
+        combo.text += $"{scoreManager.combo}";
+        maxCombo.text += $"{scoreManager.maxCombo}";
+
+        perfect.text += $"{scoreManager.perfectCnt}";
+        great.text += $"{scoreManager.greatCnt}";
+        good.text += $"{scoreManager.goodCnt}";
+        bad.text += $"{scoreManager.badCnt}";
+        miss.text += $"{scoreManager.missCnt}";
     }
 
     public void Exit()

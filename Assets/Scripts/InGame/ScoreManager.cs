@@ -17,14 +17,15 @@ public class ScoreManager : MonoBehaviour
 
     private const float MaxScore = 1000000f;
 
-    public float score;
-    public int combo;
-    public int maxCombo;
+    public float score = 0000;
+    public int combo = 0;
+    public int maxCombo = 0;
     
     private float baseScore;
     private float perfectScore;
     private float greatScore;
     private float goodScore;
+    private float missScore;
 
     public int perfectCnt;
     public int greatCnt;
@@ -52,6 +53,7 @@ public class ScoreManager : MonoBehaviour
         perfectScore = baseScore;
         greatScore = baseScore * 0.33f;
         goodScore = baseScore * 0.042f;
+        missScore = baseScore * -0.3f;
     }
 
     private void ResetText()
@@ -60,7 +62,7 @@ public class ScoreManager : MonoBehaviour
         rankText.text = "";
         comboText.text = "";
         maxComboText.text = "0";
-        scoreText.text = "";
+        scoreText.text = "0,000";
         musicName.text = Sheet.instance.songName;
     }
 
@@ -92,6 +94,7 @@ public class ScoreManager : MonoBehaviour
         {
             missCnt++;
             rankText.text = "MISS";
+            score += missScore;
             combo = 0;
         }
         

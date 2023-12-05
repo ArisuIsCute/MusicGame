@@ -14,8 +14,8 @@ public class NoteTime : MonoBehaviour
     private float perfectRate = 2500f;
     private float greatRate = 5000f;
     private float goodRate = 7000f;
-    private float badRate = 11000f;
-    private float missRate = 16000f;
+    private float badRate = 10000f;
+    private float missRate = 13000f;
 
     private int lineNum;
 
@@ -119,6 +119,10 @@ public class NoteTime : MonoBehaviour
                 scoreManager.AddScore(5);
                 noteTimeLine1.Dequeue();
             }
+            else
+            {
+                scoreManager.AddScore(5);
+            }
         }
 
         if (lineNum.Equals(2))
@@ -145,6 +149,10 @@ public class NoteTime : MonoBehaviour
             {
                 scoreManager.AddScore(5);
                 noteTimeLine2.Dequeue();
+            }
+            else
+            {
+                scoreManager.AddScore(5);
             }
         }
 
@@ -173,6 +181,10 @@ public class NoteTime : MonoBehaviour
                 scoreManager.AddScore(5);
                 noteTimeLine3.Dequeue();
             }
+            else
+            {
+                scoreManager.AddScore(5);
+            }
         }
 
         if (lineNum.Equals(4))
@@ -199,6 +211,10 @@ public class NoteTime : MonoBehaviour
             {
                 scoreManager.AddScore(5);
                 noteTimeLine4.Dequeue();
+            }
+            else
+            {
+                scoreManager.AddScore(5);
             }
         }
     }
