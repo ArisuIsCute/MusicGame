@@ -30,7 +30,9 @@ public class NoteTime : MonoBehaviour
     private Sheet sheet;
     private Music music;
     private ScoreManager scoreManager;
-
+    
+    //TODO : 판정 버그 고치기
+    
     private void Start()
     {
         sheet = Sheet.instance;
