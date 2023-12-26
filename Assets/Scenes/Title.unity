@@ -1142,6 +1142,7 @@ MonoBehaviour:
   noteLine3: []
   noteLine4: []
   songName: 
+  speed: 17
 --- !u!1 &1518733384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1153,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1518733385}
   - component: {fileID: 1518733386}
+  - component: {fileID: 1518733387}
   m_Layer: 0
   m_Name: LoadSongList
   m_TagString: Untagged
@@ -1186,11 +1188,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acde9df28ff93e548ba19a59ec8d316b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songNameList: []
-  songComposerList: []
-  songAudioPatchList: []
-  songSheetPatchList: []
   songCnt: 0
+  songList: {fileID: 1518733387}
+  newSongs: []
+--- !u!114 &1518733387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518733384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1899ce7050ec32a4f865e0f5a94dae2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  songName: 
+  composer: 
+  song: {fileID: 0}
+  sheet: {fileID: 0}
 --- !u!1 &1747472899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,8 +1529,8 @@ SceneRoots:
   - {fileID: 1783420490}
   - {fileID: 1283212118}
   - {fileID: 731896929}
-  - {fileID: 1518733385}
   - {fileID: 663398347}
   - {fileID: 862476543}
   - {fileID: 1353634339}
   - {fileID: 646006065}
+  - {fileID: 1518733385}

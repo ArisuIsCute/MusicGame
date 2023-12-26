@@ -25,15 +25,15 @@ public class Music : MonoBehaviour
         audio = GetComponent<AudioSource>();
     }
 
-    public void PlayMusicForSelect(string patch)
+    public void PlayMusicForSelect(AudioClip clip)
     {
-        audio.clip = Resources.Load<AudioClip>(patch);
+        audio.clip = clip;
         audio.Play();
     }
 
-    public void PlayMusicForTitle(string patch)
+    public void PlayMusicForTitle(AudioClip clip)
     {
-        audio.clip = Resources.Load<AudioClip>(patch);
+        audio.clip = clip;
         audio.Play();
     }
 

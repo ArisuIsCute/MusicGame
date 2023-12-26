@@ -38,11 +38,11 @@ public class SheetPaser : MonoBehaviour
         sheet = GameObject.Find("Sheet").GetComponent<Sheet>();
     }
 
-    public void StartPaserSheet(string patch)
+    public void StartPaserSheet(TextAsset text)
     {
         sheet.ResetSheet();
         noteCount = 0;
-        textAsset = Resources.Load<TextAsset>(patch);
+        textAsset = text;
         strReader = new StringReader(textAsset.text);
         sheetText = strReader.ReadLine();
 

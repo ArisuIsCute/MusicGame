@@ -10,11 +10,10 @@ public class LoadSongList : MonoBehaviour
     
     private string patch = Application.dataPath + "/Resources/Songs/";
 
-    public List<string> songNameList = new List<string>();
-    public List<string> songComposerList = new List<string>();
-    public List<string> songAudioPatchList = new List<string>();
-    public List<string> songSheetPatchList = new List<string>();
     public int songCnt = 0;
+
+    public SongList songList;
+    public List<AddNewSong> newSongs = new List<AddNewSong>();
     
     private void Awake()
     {
@@ -26,6 +25,10 @@ public class LoadSongList : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
         AddSongInfo();
     }
 
@@ -42,13 +45,19 @@ public class LoadSongList : MonoBehaviour
                 while ((data = streamReader.ReadLine()) != null)
                 {
                     string[] splitData = data.Split(':');
-                    
-                    if(splitData[0] == "SongName") songNameList.Add(splitData[1]);
-                    if(splitData[0] == "Composer") songComposerList.Add(splitData[1]);
-                    if(splitData[0] == "AudioPatch") songAudioPatchList.Add(splitData[1]);
-                    if(splitData[0] == "SheetPatch") songSheetPatchList.Add(splitData[1]);
+
+                    if (splitData[0] == "SongName")
+                        songList.songName = splitData[1];
+                    else if (splitData[0] == "Composer")
+                        songList.composer = splitData[1];
+                    else if (splitData[0] == "AudioPatch")
+                        songList.song = Resources.Load<AudioClip>("Songs/" + di.Name + "/" + di.Name + "_audio");
+                    else if (splitData[0] == "SheetPatch")
+                        songList.sheet = Resources.Load<TextAsset>("Songs/" + di.Name + "/" + di.Name + "_sheet");
                 }
             }
+            
+            newSongs.Add(new AddNewSong(songList.songName, songList.composer, songList.song, songList.sheet));
         }
     }
 }

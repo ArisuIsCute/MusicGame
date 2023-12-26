@@ -8,6 +8,13 @@ public class Title : MonoBehaviour
 {
     private void Start()
     {
-        Music.instance.PlayMusicForTitle(LoadSongList.instance.songAudioPatchList[Random.Range(0, LoadSongList.instance.songAudioPatchList.Count)]);
+        StartCoroutine(TryPlay());
+    }
+
+    private IEnumerator TryPlay()
+    {
+        yield return new WaitUntil(() => LoadSongList.instance.newSongs.Count != 0);
+        Music.instance.PlayMusicForTitle(LoadSongList.instance.newSongs[Random.Range(0, LoadSongList.instance.newSongs.Count - 1)].song);
+        yield break;
     }
 }

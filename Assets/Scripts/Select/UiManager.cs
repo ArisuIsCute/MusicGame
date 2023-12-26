@@ -31,23 +31,23 @@ public class UiManager : MonoBehaviour
     private void UpdateUi(int idx)
     {
         this.idx = idx;
-        Sheet.instance.songName = songList.songNameList[idx];
-        songName.text = songList.songNameList[idx];
-        songComposer.text = songList.songComposerList[idx];
-        music.PlayMusicForSelect(songList.songAudioPatchList[idx]);
-        sheetPaser.StartPaserSheet(songList.songSheetPatchList[idx]);
+        Sheet.instance.songName = songList.newSongs[idx].songName;
+        songName.text = songList.newSongs[idx].songName;
+        songComposer.text = songList.newSongs[idx].composer;
+        music.PlayMusicForSelect(songList.newSongs[idx].song);
+        sheetPaser.StartPaserSheet(songList.newSongs[idx].sheet);
     }
 
     public void NextList()
     {
         UpdateUi((++idx) % songList.songCnt);
-        music.PlayMusicForSelect(songList.songAudioPatchList[idx]);
+        music.PlayMusicForSelect(songList.newSongs[idx].song);
     }
 
     public void BeforeList()
     {
         UpdateUi(Math.Abs(--idx) % songList.songCnt);
-        music.PlayMusicForSelect(songList.songAudioPatchList[idx]);
+        music.PlayMusicForSelect(songList.newSongs[idx].song);
     }
 
     public void SelectSong()
