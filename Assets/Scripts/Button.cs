@@ -5,14 +5,19 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
-    public void Title()
+    public void LoadSelect()
     {
         SceneManager.LoadScene("Select");
     }
 
-    public void Select()
+    public void LoadInGame()
     {
         SceneManager.LoadScene("InGame");
+    }
+
+    public void LoadTitle()
+    {
+        SceneManager.LoadScene("Title");
     }
 
     public void ExitGame()

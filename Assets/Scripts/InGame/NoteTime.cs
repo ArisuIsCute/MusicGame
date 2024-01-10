@@ -26,14 +26,10 @@ public class NoteTime : MonoBehaviour
     private Queue<float> noteTimeLine2 = new Queue<float>();
     private Queue<float> noteTimeLine3 = new Queue<float>();
     private Queue<float> noteTimeLine4 = new Queue<float>();
-
-    [SerializeField] private TextMeshProUGUI debugText;
     
     private Sheet sheet;
     private Music music;
     private ScoreManager scoreManager;
-    
-    //TODO : 판정 버그 고치기
     
     private void Start()
     {
@@ -47,7 +43,6 @@ public class NoteTime : MonoBehaviour
     private void Update()
     {
         currentTime = music.audio.timeSamples;
-        debugText.text = currentTime.ToString();
 
         if (noteTimeLine1.Count > 0)
         {
@@ -96,6 +91,11 @@ public class NoteTime : MonoBehaviour
                 noteTimeLine4.Dequeue();
             }
         }
+
+        if (Math.Abs(currentNoteTime2 - currentTime) <= perfectRate)
+        {
+            EditorApplication.isPaused = true;
+        }
     }
 
     public void TapNote(int lineNum)
@@ -105,8 +105,6 @@ public class NoteTime : MonoBehaviour
         if (lineNum.Equals(1))
         {
             if (noteTimeLine1.Count == 0) return;
-
-            Debug.Log("Time : " + currentTime + " Line : " + currentNoteTime1);
                     
             if (Math.Abs(currentNoteTime1 - currentTime) <= perfectRate)
             {
@@ -138,8 +136,6 @@ public class NoteTime : MonoBehaviour
         if (lineNum.Equals(2))
         {
             if(noteTimeLine2.Count == 0) return;
-            
-            Debug.Log("Time : " + currentTime + " Line " +currentNoteTime2);
 
             if (Math.Abs(currentNoteTime2 - currentTime) <= perfectRate)
             {
@@ -171,8 +167,6 @@ public class NoteTime : MonoBehaviour
         if (lineNum.Equals(3))
         {
             if (noteTimeLine3.Count == 0) return;
-            
-            Debug.Log("Time : " + currentTime + " Line " +currentNoteTime3);
 
             if (Math.Abs(currentNoteTime3 - currentTime) <= perfectRate)
             {
@@ -204,8 +198,6 @@ public class NoteTime : MonoBehaviour
         if (lineNum.Equals(4))
         {
             if (noteTimeLine4.Count == 0) return;
-            
-            Debug.Log("Time : " + currentTime + " Line " +currentNoteTime4);
 
             if (Math.Abs(currentNoteTime4 - currentTime) <= perfectRate)
             {

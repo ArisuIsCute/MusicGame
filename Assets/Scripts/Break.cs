@@ -14,17 +14,7 @@ public class Break : MonoBehaviour
         if (Input.GetKey(exitKey)) exitTime += Time.deltaTime;
         if (Input.GetKeyUp(exitKey)) exitTime = 0;
         if (!(exitTime >= 1f)) return;
-        var sceneName = SceneManager.GetActiveScene().name;
-
-        switch (sceneName)
-        {
-            case "Select":
-                SceneManager.LoadScene("Title");
-                break;
-            case "InGame":
-                SceneManager.LoadScene("Result");
-                break;
-        }
+        SceneManager.LoadScene("Result");
     }
     
 }

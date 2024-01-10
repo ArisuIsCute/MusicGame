@@ -8,6 +8,7 @@ public class UiManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI songName;
     [SerializeField] private TextMeshProUGUI songComposer;
+    [SerializeField] private GameObject[] racords;
 
     public int idx;
     
@@ -42,6 +43,8 @@ public class UiManager : MonoBehaviour
     public void BeforeList()
     {
         UpdateUi(Math.Abs(--idx) % songList.newSongs.Count);
+        racords[1].GetComponent<Animation>().Play();
+        racords[0].GetComponent<Animation>().Play();
     }
 
     public void SelectSong()

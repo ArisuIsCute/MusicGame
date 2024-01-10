@@ -208,7 +208,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 731896928}
         m_TargetAssemblyTypeName: Button, Assembly-CSharp
-        m_MethodName: Title
+        m_MethodName: LoadSelect
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
