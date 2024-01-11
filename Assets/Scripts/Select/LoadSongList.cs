@@ -40,9 +40,9 @@ public class LoadSongList : MonoBehaviour
         foreach (DirectoryInfo di in directoryInfo.GetDirectories())
         {
             songCnt++;
-            using (StreamReader streamReader = new StreamReader(patch + di.Name + "/" + di.Name + "_data.txt"))
+            using (StreamReader streamReader = new StreamReader(patch + di.Name + "/" + di.Name + "_sheet.txt"))
             {
-                while ((data = streamReader.ReadLine()) != null)
+                while ((data = streamReader.ReadLine()) != "[HitObjects]")
                 {
                     string[] splitData = data.Split(':');
 
@@ -50,14 +50,15 @@ public class LoadSongList : MonoBehaviour
                         songList.songName = splitData[1];
                     else if (splitData[0] == "Composer")
                         songList.composer = splitData[1];
-                    else if (splitData[0] == "AudioPatch")
-                        songList.song = Resources.Load<AudioClip>("Songs/" + di.Name + "/" + di.Name + "_audio");
-                    else if (splitData[0] == "SheetPatch")
-                        songList.sheet = Resources.Load<TextAsset>("Songs/" + di.Name + "/" + di.Name + "_sheet");
+                    else if (splitData[0] == "Difficult")
+                        songList.difficult = splitData[1];
                 }
+                
+                songList.song = Resources.Load<AudioClip>("Songs/" + di.Name + "/" + di.Name + "_audio");
+                songList.sheet = Resources.Load<TextAsset>("Songs/" + di.Name + "/" + di.Name + "_sheet");
             }
             
-            newSongs.Add(new AddNewSong(songList.songName, songList.composer, songList.song, songList.sheet));
+            newSongs.Add(new AddNewSong(songList.songName, songList.composer, songList.difficult, songList.song, songList.sheet));
         }
     }
 }

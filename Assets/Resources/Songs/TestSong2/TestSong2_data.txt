@@ -1,4 +1,0 @@
-SongName:Test_Song2
-Composer:Test_Composer2
-AudioPatch:Songs/TestSong2/TestSong2_audio
-SheetPatch:Songs/TestSong2/TestSong2_sheet
