@@ -1,10 +1,7 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class NoteTime : MonoBehaviour
 {
@@ -91,11 +88,12 @@ public class NoteTime : MonoBehaviour
                 noteTimeLine4.Dequeue();
             }
         }
-
-        if (Math.Abs(currentNoteTime2 - currentTime) <= PerfectRate)
-        {
-            EditorApplication.isPaused = true;
-        }
+        
+        // if (Math.Abs(currentNoteTime2 - currentTime) <= PerfectRate)
+        // {
+        //     EditorApplication.isPaused = true;
+        // }
+        //if((currentNoteTime2 - currentTime) >= PerfectRate) EditorApplication.isPaused = true;
     }
 
     public void TapNote(int lineNum)
@@ -203,19 +201,23 @@ public class NoteTime : MonoBehaviour
             {
                 scoreManager.AddScore(1);
                 noteTimeLine4.Dequeue();
-            }else if (Math.Abs(currentNoteTime4 - currentTime) <= GreatRate)
+            }
+            else if (Math.Abs(currentNoteTime4 - currentTime) <= GreatRate)
             {
                 scoreManager.AddScore(2);
                 noteTimeLine4.Dequeue();
-            }else if (Math.Abs(currentNoteTime4 - currentTime) <= GoodRate)
+            }
+            else if (Math.Abs(currentNoteTime4 - currentTime) <= GoodRate)
             {
                 scoreManager.AddScore(3);
                 noteTimeLine4.Dequeue();
-            }else if (Math.Abs(currentNoteTime4 - currentTime) <= BadRate)
+            }
+            else if (Math.Abs(currentNoteTime4 - currentTime) <= BadRate)
             {
                 scoreManager.AddScore(4);
                 noteTimeLine4.Dequeue();
-            }else if (currentNoteTime4 + MissRate <= currentTime)
+            }
+            else if (currentNoteTime4 + MissRate <= currentTime)
             {
                 scoreManager.AddScore(5);
                 noteTimeLine4.Dequeue();

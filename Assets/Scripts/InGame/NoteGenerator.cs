@@ -25,7 +25,7 @@ public class NoteGenerator : MonoBehaviour
 
         scrollSpeed = sheet.speed;
         notePosY = scrollSpeed;
-        noteStartPosY = scrollSpeed * 2.395f;
+        noteStartPosY = scrollSpeed * 1.84f;
     }
 
     private void Update()

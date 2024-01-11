@@ -61,7 +61,7 @@ public class UiManager : MonoBehaviour
         sheetPaser.StartPaserSheet(songList.newSongs[idx].sheet);
         music.PlayMusicForInGame();
 
-        SceneManager.LoadScene("InGame");
+        SceneManager.LoadScene("Loading");
     }
 
     private IEnumerator ButtonColTime(Animation ani, string name)
