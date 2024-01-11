@@ -8,7 +8,7 @@ public class LoadSongList : MonoBehaviour
 {
     public static LoadSongList instance = null;
     
-    private string patch = Application.dataPath + "/Resources/Songs/";
+    private readonly string patch = Application.dataPath + "/Resources/Songs/";
 
     public int songCnt = 0;
 
