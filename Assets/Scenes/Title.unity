@@ -1367,6 +1367,7 @@ MonoBehaviour:
   noteLine4: []
   songName: 
   speed: 17
+  noteOffset: 3
 --- !u!1 &1518733384
 GameObject:
   m_ObjectHideFlags: 0

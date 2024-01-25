@@ -14,6 +14,7 @@ public class Sheet : MonoBehaviour
 
     public string songName;
     public float speed = 17f;
+    public float noteOffset = 0.0f;
 
     private void Awake()
     {

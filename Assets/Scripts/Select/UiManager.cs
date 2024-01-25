@@ -59,9 +59,8 @@ public class UiManager : MonoBehaviour
         
         Sheet.instance.songName = songList.newSongs[idx].songName;
         sheetPaser.StartPaserSheet(songList.newSongs[idx].sheet);
-        music.PlayMusicForInGame();
 
-        SceneManager.LoadScene("Loading");
+        SceneManager.LoadScene("SetOffset");
     }
 
     private IEnumerator ButtonColTime(Animation ani, string name)

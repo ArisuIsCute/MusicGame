@@ -22,6 +22,8 @@ public class GetInput : MonoBehaviour
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
         
+        Music.instance.PlayMusicForInGame();
+        
         noteTime = GameObject.Find("NoteTime").GetComponent<NoteTime>();
     }
 

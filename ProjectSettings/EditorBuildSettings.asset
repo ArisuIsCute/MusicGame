@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Select.unity
     guid: 424a3a523982ad542b8dddb6aaef1826
   - enabled: 1
+    path: Assets/Scenes/SetOffset.unity
+    guid: 15d136f2057a53d47b0dd945ba7e223d
+  - enabled: 1
     path: Assets/Scenes/Loading.unity
     guid: 34e5ebf5a988f2948b7aa3db30139511
   - enabled: 1
