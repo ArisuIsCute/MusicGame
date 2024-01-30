@@ -8,6 +8,8 @@ public class OffsetNoteGenerator : MonoBehaviour
     [SerializeField] private GameObject note;
     private float offsetY;
 
+    public float time;
+    
     private float posY;
     private float noteStartPosY;
     private float notePosY;
@@ -16,15 +18,20 @@ public class OffsetNoteGenerator : MonoBehaviour
     {
         notePosY = Sheet.instance.speed;
         noteStartPosY = notePosY * Sheet.instance.noteOffset;
-        
-        StartCoroutine(SpwanNote());
+
+        time = 0f;
     }
 
-    private IEnumerator SpwanNote()
+    private void Update()
+    {
+        time += Time.smoothDeltaTime;
+        if(time >= 3f) SpwanNote();
+    }
+
+    private void SpwanNote()
     {
         posY = noteStartPosY + notePosY * 0.001f;
         Instantiate(note, new Vector3(0f, posY, 0f), Quaternion.identity);
-        yield return new WaitForSeconds(3f);
-        StartCoroutine(SpwanNote());
+        time = 0f;
     }
 }

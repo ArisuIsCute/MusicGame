@@ -1,18 +1,22 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class OffsetUi : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private TextMeshProUGUI timeText;
+
+    private OffsetNoteGenerator noteGen;
+
+    private void Start()
     {
-        
+        noteGen = GameObject.Find("OffsetNoteGenerator").GetComponent<OffsetNoteGenerator>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        timeText.text = noteGen.time.ToString();
     }
 }
