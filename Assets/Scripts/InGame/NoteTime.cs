@@ -89,6 +89,7 @@ public class NoteTime : MonoBehaviour
             }
         }
         
+        //For Test
         // if (Math.Abs(currentNoteTime2 - currentTime) <= PerfectRate)
         // {
         //     EditorApplication.isPaused = true;
@@ -125,10 +126,6 @@ public class NoteTime : MonoBehaviour
                 scoreManager.AddScore(5);
                 noteTimeLine1.Dequeue();
             }
-            else
-            {
-                scoreManager.AddScore(5);
-            }
         }
 
         if (lineNum.Equals(2))
@@ -156,10 +153,6 @@ public class NoteTime : MonoBehaviour
                 scoreManager.AddScore(5);
                 noteTimeLine2.Dequeue();
             }
-            else
-            {
-                scoreManager.AddScore(5);
-            }
         }
 
         if (lineNum.Equals(3))
@@ -186,10 +179,6 @@ public class NoteTime : MonoBehaviour
             {
                 scoreManager.AddScore(5);
                 noteTimeLine3.Dequeue();
-            }
-            else
-            {
-                scoreManager.AddScore(5);
             }
         }
 
@@ -221,10 +210,6 @@ public class NoteTime : MonoBehaviour
             {
                 scoreManager.AddScore(5);
                 noteTimeLine4.Dequeue();
-            }
-            else
-            {
-                scoreManager.AddScore(5);
             }
         }
     }

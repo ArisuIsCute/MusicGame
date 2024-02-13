@@ -13,8 +13,16 @@ public class Break : MonoBehaviour
     {
         if (Input.GetKey(exitKey)) exitTime += Time.deltaTime;
         if (Input.GetKeyUp(exitKey)) exitTime = 0;
-        if (!(exitTime >= 1f)) return;
-        SceneManager.LoadScene("Result");
+        if (!(exitTime >= .5f)) return;
+
+        if (SceneManager.GetActiveScene().name == "InGame")
+        {
+            SceneManager.LoadScene("Result");
+        }
+        else
+        {
+            SceneManager.LoadScene("Title");
+        }
     }
     
 }

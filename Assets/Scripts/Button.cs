@@ -10,11 +10,6 @@ public class Button : MonoBehaviour
         SceneManager.LoadScene("Select");
     }
 
-    public void LoadTitle()
-    {
-        SceneManager.LoadScene("Title");
-    }
-
     public void ExitGame()
     {
 #if UNITY_EDITOR

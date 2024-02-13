@@ -60,7 +60,7 @@ public class UiManager : MonoBehaviour
         Sheet.instance.songName = songList.newSongs[idx].songName;
         sheetPaser.StartPaserSheet(songList.newSongs[idx].sheet);
 
-        SceneManager.LoadScene("SetOffset");
+        SceneManager.LoadScene("Loading");
     }
 
     private IEnumerator ButtonColTime(Animation ani, string name)
