@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 429922474770821251}
   - component: {fileID: 6042593403229306270}
-  - component: {fileID: 452101406141305839}
+  - component: {fileID: 9155739700140356944}
   m_Layer: 0
-  m_Name: Note
+  m_Name: DownNote
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 8143902606286318943}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.52, y: -1.7, z: 0}
+  m_LocalPosition: {x: 11.52, y: -0.31, z: 0}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &452101406141305839
+--- !u!114 &9155739700140356944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -94,6 +94,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8143902606286318943}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79d2bf013e6a2294d8c6385ae383c9f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 721b95bddf122654ead13fed4089256b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
